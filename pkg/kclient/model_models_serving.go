@@ -12,6 +12,8 @@ package kclient
 type ModelsServing struct {
 	ApplicationDisplayName        string                                `json:"ApplicationDisplayName,omitempty"`
 	ApplicationName               string                                `json:"ApplicationName,omitempty"`
+	ApplicationSource             string                                `json:"ApplicationSource,omitempty"`
+	ApplicationSourceSubPath      string                                `json:"ApplicationSourceSubPath,omitempty"`
 	Build                         string                                `json:"Build,omitempty"`
 	ClusterID                     string                                `json:"ClusterID,omitempty"`
 	Config                        *MlappUniversalServing                `json:"Config,omitempty"`

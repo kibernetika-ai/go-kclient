@@ -8,8 +8,8 @@ import (
 )
 
 func main() {
-	servingWorkspaceName, servingName, port, model := "expo-recall", "demo-0-0-1", "9000", "any"
-	data := util.TFRequest(
+	servingWorkspaceName, servingName := "expo-recall", "demo-0-0-1"
+	data := util.Request(
 		map[string]interface{}{
 			"test_text":  "current datetime: " + time.Now().String(),
 			"test_int":   42,
@@ -19,8 +19,8 @@ func main() {
 			"test_image": "clover.png",
 		},
 	)
-	if response, r, err := config.Client().ServingApi.ServingTFProxyModel(
-		config.Auth(), model, data, servingWorkspaceName, servingName, port,
+	if response, r, err := config.Client().ServingApi.ServingProxy(
+		config.Auth(), data, servingWorkspaceName, servingName,
 	); err != nil {
 		util.ErrorFatal(err)
 	} else {

@@ -10,5 +10,7 @@
 package kclient
 
 type MlappServingSpecOptions struct {
-	NoCache bool `json:"noCache,omitempty"`
+	EdgeHost           string `json:"edgeHost,omitempty"`
+	NoCache            bool   `json:"noCache,omitempty"`
+	SaveStreamPreviews bool   `json:"saveStreamPreviews,omitempty"`
 }
